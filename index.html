@@ -1,0 +1,25 @@
+<html>
+  <h3>Testing</h3>
+
+  Testing usage of Fetch API in Functions within Cloudflare Pages.
+
+  <button onclick="helloWorld();">Hello World Fetch Request</button>
+  <button onclick="useFetch();">Use Fetch API in Function Request</button>
+
+  <script>
+    function helloWorld() {
+      fetchData("hello-world");
+    }
+
+    function useFetch() {
+      fetchData("use-fetch");
+    }
+
+    function fetchData(api) {
+      fetch(api)
+        .then((response) => response.json())
+        .then((data) => alert(JSON.stringify(data)))
+        .catch(() => alert(`Failure with ${api}`));
+    }
+  </script>
+</html>
