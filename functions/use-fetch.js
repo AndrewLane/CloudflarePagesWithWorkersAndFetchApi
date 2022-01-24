@@ -2,7 +2,6 @@ export async function onRequestGet({}) {
   const url = "https://swapi.dev/api/planets/1/";
   const result = await fetch(url, {
     method: "GET",
-    cache: "no-cache",
   });
   const data = await result.json();
   const info = JSON.stringify(data);
