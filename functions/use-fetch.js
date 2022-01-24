@@ -1,9 +1,6 @@
-export const onRequestGet = async ({}) => {
-  const url = "https://swapi.dev/api/planets/1/";
-  const result = await fetch(url, {
-    method: "GET",
-    cache: "no-cache",
-  });
-  const data = await result.json();
-  return new Response(JSON.stringify(data));
-};
+export async function onRequestGet({}) {
+  const res = await fetch(`https://rickandmortyapi.com/api/character/12`);
+  const data = await res.json();
+  const info = JSON.stringify(data);
+  return new Response(info, null, 2);
+}
